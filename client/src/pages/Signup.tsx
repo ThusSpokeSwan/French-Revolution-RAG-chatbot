@@ -22,7 +22,7 @@ function Signup() {
     try {
       const response =
         await axios.post(
-          "http://localhost:5000/auth/signup",
+          `${import.meta.env.VITE_API_URL}/auth/signup`,
           {
             name,
             email,
@@ -40,7 +40,7 @@ function Signup() {
 
       const userResponse =
         await axios.get(
-          "http://localhost:5000/me",
+          `${import.meta.env.VITE_API_URL}/me`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

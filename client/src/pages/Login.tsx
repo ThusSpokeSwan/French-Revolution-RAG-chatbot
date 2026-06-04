@@ -19,7 +19,7 @@ function Login() {
     try {
       const response =
         await axios.post(
-          "http://localhost:5000/auth/login",
+          `${import.meta.env.VITE_API_URL}/auth/login`,
           {
             email,
             password,
@@ -36,7 +36,7 @@ function Login() {
 
       const userResponse =
         await axios.get(
-          "http://localhost:5000/me",
+          `${import.meta.env.VITE_API_URL}/me`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

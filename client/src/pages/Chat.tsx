@@ -69,42 +69,29 @@ function Chat() {
         );
     };
 
-    const deleteChat = async (id: number) => {
-        try {
-            await axios.delete(
-                `http://localhost:5000/chat/${id}`
-            );
+    const deleteChat = (id: number) => {
+    const updatedChats = chats.filter(
+        (chat) => chat.id !== id
+    );
 
-            const updatedChats = chats.filter(
-                (chat) => chat.id !== id
-            );
+    if (updatedChats.length === 0) {
+        const newChat = {
+            id: Date.now(),
+            title: "New Chat",
+            messages: [],
+        };
 
-            if (updatedChats.length === 0) {
-                const newChat = {
-                    id: Date.now(),
-                    title: "New Chat",
-                    messages: [],
-                };
+        setChats([newChat]);
+        setActiveChatId(newChat.id);
+        return;
+    }
 
-                setChats([newChat]);
-                setActiveChatId(newChat.id);
-                return;
-            }
+    setChats(updatedChats);
 
-            setChats(updatedChats);
-
-            if (activeChatId === id) {
-                setActiveChatId(
-                    updatedChats[0].id
-                );
-            }
-        } catch (error) {
-            console.error(
-                "Failed to delete chat",
-                error
-            );
-        }
-    };
+    if (activeChatId === id) {
+        setActiveChatId(updatedChats[0].id);
+    }
+};
 
     const sendMessage = async () => {
         if (!message.trim()) return;
