@@ -4,6 +4,9 @@ A Retrieval-Augmented Generation (RAG) chatbot focused on the French Revolution.
 
 This project was primarily built as a learning exercise to understand the practical implementation of RAG systems, including document ingestion, embedding generation, vector search, retrieval pipelines, authentication, and frontend-backend integration.
 
+
+## Live Demo
+🌐 https://french-revolution-rag-chatbot.vercel.app
 ---
 
 ## Features
@@ -53,6 +56,8 @@ This project was primarily built as a learning exercise to understand the practi
 - TypeScript
 - JWT Authentication
 - Express Rate Limit
+
+#### Frontend deployed on Vercel and backend deployed on Render.
 
 ### AI & Retrieval
 - Google Gemini API
