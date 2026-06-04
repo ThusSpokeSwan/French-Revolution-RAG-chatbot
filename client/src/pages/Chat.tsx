@@ -129,7 +129,7 @@ function Chat() {
             setLoading(true);
 
             const response = await axios.post(
-                "http://localhost:5000/chat",
+                `${import.meta.env.VITE_API_URL}/chat`,
                 {
                     message: userMessage,
                     history: activeChat.messages,
