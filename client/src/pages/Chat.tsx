@@ -195,7 +195,7 @@ function Chat() {
                     ✨ New Conversation
                 </button>
 
-                <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <div className="hidden md:block mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Recent Chats
                 </div>
 
