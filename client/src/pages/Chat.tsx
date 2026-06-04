@@ -183,7 +183,7 @@ function Chat() {
         <div className="h-screen flex overflow-hidden bg-slate-950 text-white">
             {/* Sidebar */}
             <aside
-                className={`bg-white/5 backdrop-blur-xl border-white/10 transition-all duration-300 ease-in-out flex flex-col ${sidebarOpen
+                className={`hidden md:flex bg-white/5 backdrop-blur-xl border-white/10 transition-all duration-300 ease-in-out flex flex-col ${sidebarOpen
                     ? "w-72 p-4"
                     : "w-0 p-0 border-r-0"
                     } overflow-hidden`}
@@ -236,12 +236,12 @@ function Chat() {
                 <div className="flex items-center justify-between border-b border-white/10 bg-black/20 px-6 py-4 backdrop-blur-xl">
 
                     {/* Left */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 md:gap-3">
                         <button
                             onClick={() =>
                                 setSidebarOpen(!sidebarOpen)
                             }
-                            className="rounded-xl border border-white/20 p-2 hover:bg-white/10"
+                            className="hidden md:block rounded-xl border border-white/20 p-2 hover:bg-white/10"
                         >
                             {sidebarOpen ? (
                                 <PanelLeftClose size={18} />
