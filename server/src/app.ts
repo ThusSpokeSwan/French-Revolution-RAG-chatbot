@@ -70,7 +70,7 @@ app.get(
   }
 );
 
-const PORT = 5000;
+const PORT = Number(process.env.PORT) || 5000;
 
 app.post("/chat", chatLimiter, async (req, res) => {
   try {
